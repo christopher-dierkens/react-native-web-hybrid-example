@@ -1,0 +1,47 @@
+{
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/react",
+    "prettier/@typescript-eslint"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    },
+    {
+      "files": ["__mocks__/**/*.*"],
+      "env": {
+        "commonjs": true
+      },
+      "rules": {
+        "no-var-requires": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "react/prop-types": "off"
+      }
+    }
+  ],
+  "plugins": ["@typescript-eslint/tslint"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/tslint/config": [
+      "error",
+      {
+        "lintFile": "./tslint.json"
+      }
+    ]
+  },
+  "root": true,
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
