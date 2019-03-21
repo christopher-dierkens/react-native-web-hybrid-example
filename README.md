@@ -112,6 +112,34 @@ To learn Expo (React Native), check out the [Expo documentation](https://docs.ex
 
 ## Dependencies
 
+### `node-sass`
+
+Required as a dependency to `sass-loader` in order to use `SCSS` modules.
+
+### `@babel/core@7.2.2`
+
+`expo start` fails with `Error: Cannot find module '@babel/plugin-transform-runtime' from '/Users/dierkenc/Projects/react-native-web-hybrid-example'` when upgrading to `@babel/core@7.4.4`
+
+### `react@16.5.0`
+
+Expo requires this specific version of react. See https://blog.expo.io/expo-sdk-v32-0-0-is-now-available-6b78f92a6c52.
+
 ### `whatwg-fetch@2.0.4`
 
 This specific version is an unnamed dependency of [`jest-expo@v32.0.0`](https://github.com/expo/expo/tree/sdk-32/packages/jest-expo). We can most likely drop this dependency when expo releases [SDK-33](https://github.com/expo/expo/milestone/22)
+
+### `react-native-gesture-handler@~1.0.14` and `react-native-screens@1.0.0-alpha.22`
+
+This specific versions need to match `expo@32.0.6`'s dependencies. They are installed to remove a peer dependency warning for `react-navigation`.
+
+### Known Warnings
+
+```
+warning "expo > expo-background-fetch@1.0.0" has unmet peer dependency "expo-task-manager-interface@~1.0.0".
+warning "expo > expo-google-sign-in@2.0.0" has incorrect peer dependency "react-native@^0.55.4".
+warning "expo > expo-location@2.0.1" has unmet peer dependency "expo-task-manager-interface@~1.0.0".
+warning "expo > react-native-reanimated@1.0.0-alpha.11" has incorrect peer dependency "react@16.0.0-alpha.6".
+warning "expo > react-native-reanimated@1.0.0-alpha.11" has incorrect peer dependency "react-native@^0.44.1".
+
+warning " > react-native-web@0.11.1" has incorrect peer dependency "react@>=16.5.1".
+```
