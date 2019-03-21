@@ -25,7 +25,7 @@ module.exports = {
   },
   resolver: 'jest-pnp-resolver',
   setupFiles: ['react-app-polyfill/jsdom'],
-  setupTestFrameworkScriptFile: '<rootDir>/config/jest/setup.js',
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setup.js'],
   testEnvironment: 'jsdom',
   testMatch: [
     '<rootDir>/src/web/**/__tests__/**/*.{js,jsx,ts,tsx}',
