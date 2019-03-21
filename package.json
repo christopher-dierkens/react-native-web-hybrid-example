@@ -79,6 +79,8 @@
     "babel-jest": "24.5.0",
     "babel-preset-expo": "^5.0.0",
     "bfj": "6.1.1",
+    "chai": "^4.2.0",
+    "cucumber": "^5.1.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
     "enzyme-to-json": "^3.3.5",
@@ -95,6 +97,7 @@
     "lint-staged": "^8.1.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.16.4",
+    "puppeteer": "^1.13.0",
     "react-test-renderer": "^16.8.4",
     "whatwg-fetch": "2.0.4"
   },
@@ -111,7 +114,8 @@
     "start:web": "node scripts/start.js",
     "test": "npm-run-all -nl 'test:* --coverage'",
     "test:native": "node scripts/test.js --config='jest.native.config.js'",
-    "test:web": "node scripts/test.js"
+    "test:web": "node scripts/test.js",
+    "e2e": "cucumber-js"
   },
   "browserslist": [
     ">0.2%",
